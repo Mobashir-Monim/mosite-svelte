@@ -1,9 +1,10 @@
 <script lang="ts">
-	export let containerShape: string = 'rect';
 	export let size: number = 100;
-	export let outlineShapeClasses: string = 'stroke-black fill-none dark:stroke-white';
-	export let solidShapeClasses: string = 'stroke-black fill-black dark:stroke-white';
+	export let containerShape: string = 'rect';
 	export let containerClasses: string = 'stroke-black dark:stroke-white !fill-none';
+	export let outlineShapeClasses: string = 'stroke-black fill-none dark:stroke-white';
+	export let solidShapeClasses: string =
+		'stroke-black fill-black dark:stroke-white dark:fill-white';
 </script>
 
 <svg
