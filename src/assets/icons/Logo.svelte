@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let svgBoxClasses: string = 'fill-none';
 	export let size: number = 100;
 	export let containerShape: string = 'rect';
 	export let containerClasses: string = 'stroke-black dark:stroke-white !fill-none';
@@ -12,7 +13,7 @@
 	width={size}
 	height={size}
 	viewBox="0 0 100 100"
-	fill="none"
+	class={svgBoxClasses}
 >
 	<rect
 		x="63.9093"
@@ -89,9 +90,11 @@
 		class={solidShapeClasses}
 	/>
 
-	{#if containerShape === 'circle'}
-		<rect x="0.5" y="0.5" width="99" height="99" rx="49.5" class={containerClasses} />
-	{:else}
-		<rect x="0.5" y="0.5" width="99" height="99" class={containerClasses} />
+	{#if containerShape !== 'none'}
+		{#if containerShape === 'circle'}
+			<rect x="0.5" y="0.5" width="99" height="99" rx="49.5" class={containerClasses} />
+		{:else}
+			<rect x="0.5" y="0.5" width="99" height="99" class={containerClasses} />
+		{/if}
 	{/if}
 </svg>

@@ -13,3 +13,5 @@ export interface SocialItemType {
 	label: "facebook" | "twitter" | "github" | "linkedin";
 	link: string;
 }
+
+export type setActiveContentFunctionType = (a: string) => void;
