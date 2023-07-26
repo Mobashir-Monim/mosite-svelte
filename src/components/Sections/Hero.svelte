@@ -7,7 +7,7 @@
 	const contentKey: string = 'hero';
 </script>
 
-<Section>
+<Section {contentKey}>
 	<div
 		class="w-full flex flex-col"
 		use:viewport

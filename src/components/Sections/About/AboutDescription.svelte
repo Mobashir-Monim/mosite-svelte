@@ -1,19 +1,12 @@
 <script lang="ts">
-	import viewport from '../../actions/useViewportAction';
-	import Section from './Section.svelte';
-
-	export let setCurrentContentKey: (a: string) => void;
-	const contentKey: string = 'about';
-
-	let focusClasses: string = 'text-transparent font-semibold';
+	const focusClasses: string = 'font-semibold text-blue-400';
 </script>
 
-<Section>
-	<div
-		class="flex flex-col gap-5 bg-gradient-to-bl from-cyan-500 to-violet-500 bg-clip-text"
-		use:viewport
-		on:enterViewport={() => setCurrentContentKey(contentKey)}
-	>
+<div
+	class="flex flex-col gap-5 rounded-3xl p-8 shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)] w-full md:w-[65%]"
+>
+	<h1 class="text-[1.2rem] border-b">About Me</h1>
+	<div class="max-h-[60vh] overflow-y-auto flex flex-col gap-3 no-scroll-bar my-auto">
 		<p class="text-justify">
 			I am a <span class={focusClasses}>full stack web developer</span> with a passion for learning and
 			creating. I am innately curious and have a love for research, exploring new ideas and approaches.
@@ -33,11 +26,12 @@
 			and <span class={focusClasses}>manage</span> my work and time quite efficiently. At the same
 			time, I have been able to accumulate a relatively significant amount of experience from
 			teaching (both professionally en masse and as a private tutor), to working as a volunteer in
-			non-profit, to building software in <span class={focusClasses}>start-up conditions</span> and
-			managing people and processes in
+			non-profit, to building software in
+			<span class={focusClasses}>start-up conditions</span>
+			and managing people and processes in
 			<span class={focusClasses}>corporate</span>
 			and <span class={focusClasses}>non-corporate</span>
 			environments.
 		</p>
 	</div>
-</Section>
+</div>

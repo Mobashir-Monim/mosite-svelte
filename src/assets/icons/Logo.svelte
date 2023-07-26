@@ -2,10 +2,9 @@
 	export let svgBoxClasses: string = 'fill-none';
 	export let size: number = 100;
 	export let containerShape: string = 'rect';
-	export let containerClasses: string = 'stroke-black dark:stroke-white !fill-none';
-	export let outlineShapeClasses: string = 'stroke-black fill-none dark:stroke-white';
-	export let solidShapeClasses: string =
-		'stroke-black fill-black dark:stroke-white dark:fill-white';
+	export let containerClasses: string = 'stroke-white !fill-none';
+	export let outlineShapeClasses: string = 'fill-none stroke-white';
+	export let solidShapeClasses: string = 'stroke-white fill-white';
 </script>
 
 <svg

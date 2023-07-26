@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let circle: boolean = false;
 	export let size: number = 48;
-	export let classes: string = 'fill-black dark:fill-white';
+	export let classes: string = 'fill-white';
 </script>
 
 {#if circle}

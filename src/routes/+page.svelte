@@ -4,7 +4,7 @@
 	import LogoBlock from '../components/LogoBlock/LogoBlock.svelte';
 	import NameBlock from '../components/NameBlock/NameBlock.svelte';
 	import NavList from '../components/NavList/NavList.svelte';
-	import About from '../components/Sections/About.svelte';
+	import About from '../components/Sections/About/About.svelte';
 	import Hero from '../components/Sections/Hero.svelte';
 	import SocialsBlock from '../components/SocialsBlock/SocialsBlock.svelte';
 	import type { NavItemType, PersonNameType, SocialItemType } from '../types';
@@ -52,7 +52,7 @@
 		}
 	];
 
-	let currentContent: string = 'about';
+	let currentContent: string = 'hero';
 	const setCurrentContentKey: (a: string) => void = (contentKey) => {
 		currentContent = contentKey;
 	};
@@ -72,12 +72,20 @@
 				: 'h-[0vh] opacity-0'}"
 		/>
 		<div
-			class="transition-all duration-300 ease-linear bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-slate-600 via-slate-800 to-sky-900 w-full {currentContent ===
+			class="transition-all duration-300 ease-linear flex bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-slate-600 via-slate-800 to-sky-900 w-full {currentContent ===
 			'about'
 				? 'h-[100vh] opacity-100'
 				: 'h-[0vh] opacity-0'}"
-		/>
+		>
+			<!-- <Logo
+				size={300}
+				svgBoxClasses="mx-auto my-auto fill-none "
+				containerShape="none"
+				solidShapeClasses="stroke-white fill-white"
+				outlineShapeClasses="stroke-white/50"
+			/> -->
+		</div>
 	</div>
-	<!-- <Hero {setCurrentContentKey} /> -->
+	<Hero {setCurrentContentKey} />
 	<About {setCurrentContentKey} />
 </main>

@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
+	export let contentKey: string;
+	export let classes: string = '';
 </script>
 
-<section class="w-full h-[100vh] bg-transparent snap-start">
-	<div class="flex flex-col h-[100vh] justify-center max-w-[800px] mx-auto px-5">
+<section id={contentKey} class="w-full h-[100vh] bg-transparent relative snap-start {classes}">
+	<div class="flex flex-col h-[100vh] justify-center max-w-[1000px] mx-auto px-5 re">
 		<slot />
 	</div>
 </section>
