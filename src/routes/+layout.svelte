@@ -18,27 +18,51 @@
 		{
 			label: 'About',
 			icon: AccountIcon,
-			contentKey: 'about'
+			contentKey: 'about',
+			props: {
+				size: 34,
+				classes: 'fill-white hover:fill-fuchsia-400 cursor-pointer my-auto'
+			}
 		},
 		{
 			label: 'Experience',
 			icon: WorkIcon,
-			contentKey: 'experience'
+			contentKey: 'experience',
+			props: {
+				size: 34,
+				classes: 'fill-white hover:fill-fuchsia-400 cursor-pointer my-auto'
+			}
 		},
 		{
 			label: 'Landing',
 			icon: Logo,
-			contentKey: 'logo'
+			contentKey: 'hero',
+			props: {
+				size: 50,
+				containerShape: 'none',
+				svgBoxClasses: 'my-auto group cursor-pointer',
+				outlineShapeClasses: 'stroke-white fill-none group-hover:stroke-fuchsia-400',
+				solidShapeClasses:
+					'stroke-white fill-white group-hover:stroke-fuchsia-400 group-hover:fill-fuchsia-400 stroke-2'
+			}
 		},
 		{
 			label: 'Projects',
 			icon: ProjectIcon,
-			contentKey: 'projects'
+			contentKey: 'projects',
+			props: {
+				size: 34,
+				classes: 'fill-white hover:fill-fuchsia-400 cursor-pointer my-auto'
+			}
 		},
 		{
 			label: 'Education',
 			icon: EducationIcon,
-			contentKey: 'education'
+			contentKey: 'education',
+			props: {
+				size: 34,
+				classes: 'fill-white hover:fill-fuchsia-400 cursor-pointer my-auto'
+			}
 		}
 	];
 </script>

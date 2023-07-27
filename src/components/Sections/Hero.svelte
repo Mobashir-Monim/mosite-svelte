@@ -41,7 +41,7 @@
 			size={200}
 			svgBoxClasses="mx-auto fill-none"
 			containerShape="none"
-			solidShapeClasses="stroke-white fill-white"
+			solidShapeClasses="stroke-white fill-white stroke-2"
 			outlineShapeClasses="stroke-white/50"
 		/>
 		<div class="mx-auto">

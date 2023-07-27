@@ -12,7 +12,7 @@
 	width={size}
 	height={size / 2}
 	viewBox="0 0 100 50"
-	class={svgBoxClasses}
+	class="transition-all duration-300 ease-linear {svgBoxClasses}"
 >
 	<rect
 		x="38.1666"
@@ -21,7 +21,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(60 38.1666 12.7008)"
-		class={outlineShapeClasses}
+		class="transition-all duration-300 ease-linear {outlineShapeClasses}"
 	/>
 	<rect
 		x="39.1646"
@@ -30,7 +30,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(120 39.1646 13.6994)"
-		class={outlineShapeClasses}
+		class="transition-all duration-300 ease-linear {outlineShapeClasses}"
 	/>
 	<rect
 		x="37.5126"
@@ -39,7 +39,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(-120 37.5126 47.113)"
-		class={outlineShapeClasses}
+		class="transition-all duration-300 ease-linear {outlineShapeClasses}"
 	/>
 	<rect
 		x="62.9112"
@@ -48,7 +48,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(60 62.9112 1.68448)"
-		class={solidShapeClasses}
+		class="transition-all duration-300 ease-linear stroke-2 {solidShapeClasses}"
 	/>
 	<rect
 		x="51.1446"
@@ -57,7 +57,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(120 51.1446 24.7923)"
-		class={outlineShapeClasses}
+		class="transition-all duration-300 ease-linear {outlineShapeClasses}"
 	/>
 	<rect
 		x="63.9093"
@@ -66,7 +66,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(120 63.9093 2.68301)"
-		class={solidShapeClasses}
+		class="transition-all duration-300 ease-linear stroke-2 {solidShapeClasses}"
 	/>
 	<rect
 		x="38.1666"
@@ -75,7 +75,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(60 38.1666 1.70083)"
-		class={solidShapeClasses}
+		class="transition-all duration-300 ease-linear stroke-2 {solidShapeClasses}"
 	/>
 	<rect
 		x="39.1646"
@@ -84,7 +84,7 @@
 		height="2"
 		rx="1"
 		transform="rotate(120 39.1646 2.69937)"
-		class={solidShapeClasses}
+		class="transition-all duration-300 ease-linear stroke-2 {solidShapeClasses}"
 	/>
 
 	{#if containerShape !== 'none'}
