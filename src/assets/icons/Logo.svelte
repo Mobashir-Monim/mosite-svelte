@@ -10,82 +10,80 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	width={size}
-	height={size}
-	viewBox="0 0 100 100"
+	height={size / 2}
+	viewBox="0 0 100 50"
 	class={svgBoxClasses}
 >
 	<rect
-		x="63.9093"
-		y="27.683"
-		width="51.3191"
-		height="2"
-		rx="1"
-		transform="rotate(120 63.9093 27.683)"
-		class={outlineShapeClasses}
-	/>
-	<rect
 		x="38.1666"
-		y="37.7008"
+		y="12.7008"
 		width="38.7661"
 		height="2"
 		rx="1"
-		transform="rotate(60 38.1666 37.7008)"
+		transform="rotate(60 38.1666 12.7008)"
 		class={outlineShapeClasses}
 	/>
 	<rect
 		x="39.1646"
-		y="38.6994"
+		y="13.6994"
 		width="38.8577"
 		height="2"
 		rx="1"
-		transform="rotate(120 39.1646 38.6994)"
+		transform="rotate(120 39.1646 13.6994)"
 		class={outlineShapeClasses}
 	/>
 	<rect
 		x="37.5126"
-		y="72.113"
+		y="47.113"
 		width="26.7185"
 		height="2"
 		rx="1"
-		transform="rotate(-120 37.5126 72.113)"
+		transform="rotate(-120 37.5126 47.113)"
 		class={outlineShapeClasses}
 	/>
-
 	<rect
-		x="38.1666"
-		y="26.7008"
+		x="62.9112"
+		y="1.68448"
 		width="51.4972"
 		height="2"
 		rx="1"
-		transform="rotate(60 38.1666 26.7008)"
+		transform="rotate(60 62.9112 1.68448)"
+		class={solidShapeClasses}
+	/>
+	<rect
+		x="51.1446"
+		y="24.7923"
+		width="25.7895"
+		height="2"
+		rx="1"
+		transform="rotate(120 51.1446 24.7923)"
+		class={outlineShapeClasses}
+	/>
+	<rect
+		x="63.9093"
+		y="2.68301"
+		width="26.0111"
+		height="2"
+		rx="1"
+		transform="rotate(120 63.9093 2.68301)"
+		class={solidShapeClasses}
+	/>
+	<rect
+		x="38.1666"
+		y="1.70083"
+		width="51.4972"
+		height="2"
+		rx="1"
+		transform="rotate(60 38.1666 1.70083)"
 		class={solidShapeClasses}
 	/>
 	<rect
 		x="39.1646"
-		y="27.6994"
+		y="2.69937"
 		width="51.4987"
 		height="2"
 		rx="1"
-		transform="rotate(120 39.1646 27.6994)"
-		class={solidShapeClasses}
-	/>
-
-	<rect
-		x="62.9112"
-		y="26.6845"
-		width="51.4972"
-		height="2"
-		rx="1"
-		transform="rotate(60 62.9112 26.6845)"
-		class={solidShapeClasses}
-	/>
-	<rect
-		x="63.9093"
-		y="27.683"
-		width="26.0111"
-		height="2"
-		rx="1"
-		transform="rotate(120 63.9093 27.683)"
+		transform="rotate(120 39.1646 2.69937)"
 		class={solidShapeClasses}
 	/>
 

@@ -5,36 +5,28 @@
 	import MediaQuery from '../../../MediaQuery.svelte';
 	import AboutDescription from './AboutDescription.svelte';
 	import AboutIntro from './AboutIntro.svelte';
+	import { currentContentStore } from '../../../store';
 
-	export let setCurrentContentKey: (a: string) => void;
 	const contentKey: string = 'about';
+	let setCurrentContentKey: () => void = () => {
+		currentContentStore.set(contentKey);
+	};
+
 	const mobileAboutSectionClasses =
 		'h-[calc(100vh-20px)] snap-start shrink-0 text-[0.8rem] flex flex-col justify-center mx-5 my-2.5';
 </script>
 
 <MediaQuery query="(max-width: 480px)" let:matches>
 	{#if matches}
-		<div
-			class={mobileAboutSectionClasses}
-			use:viewport
-			on:enterViewport={() => setCurrentContentKey(contentKey)}
-		>
+		<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
 			<AboutIntro />
 		</div>
 
-		<div
-			class={mobileAboutSectionClasses}
-			use:viewport
-			on:enterViewport={() => setCurrentContentKey(contentKey)}
-		>
+		<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
 			<AboutDescription />
 		</div>
 
-		<div
-			class={mobileAboutSectionClasses}
-			use:viewport
-			on:enterViewport={() => setCurrentContentKey(contentKey)}
-		>
+		<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
 			<SkillBlock />
 		</div>
 	{:else}
@@ -43,7 +35,7 @@
 				<div
 					class="hidden md:flex flex-col justify-between gap-5 w-full"
 					use:viewport
-					on:enterViewport={() => setCurrentContentKey(contentKey)}
+					on:enterViewport={setCurrentContentKey}
 				>
 					<div class="flex flex-row gap-5 justify-between w-full">
 						<AboutIntro />

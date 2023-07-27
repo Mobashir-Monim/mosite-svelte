@@ -9,7 +9,7 @@
 	<span class="my-auto">
 		<Location circle={true} size={25} />
 	</span>
-	<span class="my-auto">
+	<span class="my-auto line-clamp-1">
 		{location.city}, {location.country}
 	</span>
 </div>

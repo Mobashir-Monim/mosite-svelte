@@ -71,6 +71,14 @@
 			name: 'Cryptography',
 			type: 'technical'
 		},
+        {
+			name: 'AWS',
+			type: 'technical'
+		},
+        {
+			name: 'Firestore',
+			type: 'technical'
+		},
 		{
 			name: 'Scrum Master',
 			type: 'general'

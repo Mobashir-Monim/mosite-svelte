@@ -1,3 +1,10 @@
+import type { SvelteComponent } from 'svelte';
+import type AccountIcon from '../assets/icons/AccountIcon.svelte';
+import type EducationIcon from '../assets/icons/EducationIcon.svelte';
+import type ProjectIcon from '../assets/icons/ProjectIcon.svelte';
+import type WorkIcon from '../assets/icons/WorkIcon.svelte';
+import type Logo from '../assets/icons/Logo.svelte';
+
 export interface PersonNameType {
 	first: string;
 	middle?: string;
@@ -17,7 +24,20 @@ export interface SkillTagType {
 
 export interface NavItemType {
 	label: string;
+	icon: Omit<typeof SvelteComponent<IconType>, 'prototype'>;
+	// icon:
+	// 	| typeof AccountIcon
+	// 	| typeof EducationIcon
+	// 	| typeof ProjectIcon
+	// 	| typeof WorkIcon
+	// 	| typeof Logo;
 	contentKey: string;
+}
+
+export interface IconType {
+	size: number;
+	classes: string;
+	circle?: boolean;
 }
 
 export interface SocialItemType {
@@ -26,7 +46,3 @@ export interface SocialItemType {
 }
 
 export type setActiveContentFunctionType = (a: string) => void;
-
-declare global {
-    interface Window { MyNamespace: any; }
-}

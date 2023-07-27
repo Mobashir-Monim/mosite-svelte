@@ -1,14 +1,14 @@
 <script lang="ts">
-	import WorkIcon from '../../assets/icons/WorkIcon.svelte';
+	import EducationIcon from '../../assets/icons/EducationIcon.svelte';
 
-	export let work: string;
+	export let education: string;
 </script>
 
 <div class="flex flex-row gap-5">
 	<span class="my-auto">
-		<WorkIcon size={25} />
+		<EducationIcon size={25} />
 	</span>
 	<span class="my-auto line-clamp-1">
-		{work}
+		{education}
 	</span>
 </div>

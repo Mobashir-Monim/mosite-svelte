@@ -1,6 +1,6 @@
 let intersectionObserver: IntersectionObserver;
 
-function ensureIntersectionObserver() {
+const ensureIntersectionObserver = (): void => {
 	if (intersectionObserver) return;
 
 	intersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
