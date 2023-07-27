@@ -3,6 +3,7 @@
 	import Hero from '../components/Sections/Hero.svelte';
 	import type { NavItemType, PersonNameType, SocialItemType } from '../types';
 	import { currentContentStore } from '../store';
+	import Experience from '../components/Sections/Experiences/Experiences.svelte';
 
 	let screenWidth: number, screenHeight: number;
 
@@ -30,7 +31,15 @@
 				? 'h-[100vh]'
 				: 'h-[0vh]'}"
 		/>
+		<div
+			style="background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);"
+			class="transition-all duration-300 ease-linear w-full {currentContent === 'experience'
+				? 'h-[100vh]'
+				: 'h-[0vh]'}"
+		/>
 	</div>
+
 	<Hero />
 	<About />
+	<Experience />
 </main>
