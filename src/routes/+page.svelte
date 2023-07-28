@@ -14,6 +14,10 @@
 
 <svelte:window bind:innerWidth={screenWidth} bind:innerHeight={screenHeight} />
 
+<svelte:head>
+	<title>Mobashir Monim</title>
+</svelte:head>
+
 <main
 	class="snap-y snap-mandatory h-screen overflow-scroll relative flex flex-col gap bg-gradient-to-t"
 >
