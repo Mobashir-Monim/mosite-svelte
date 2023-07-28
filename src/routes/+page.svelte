@@ -38,7 +38,7 @@
 		/>
 	</div>
 
-	<!-- <Hero />
-	<About /> -->
+	<Hero />
+	<About />
 	<Experience />
 </main>
