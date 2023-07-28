@@ -1,10 +1,3 @@
-import type { SvelteComponent } from 'svelte';
-import type AccountIcon from '../assets/icons/AccountIcon.svelte';
-import type EducationIcon from '../assets/icons/EducationIcon.svelte';
-import type ProjectIcon from '../assets/icons/ProjectIcon.svelte';
-import type WorkIcon from '../assets/icons/WorkIcon.svelte';
-import type Logo from '../assets/icons/Logo.svelte';
-
 export interface PersonNameType {
 	first: string;
 	middle?: string;
