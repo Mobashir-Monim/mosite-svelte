@@ -41,3 +41,28 @@ export interface SocialItemType {
 }
 
 export type setActiveContentFunctionType = (a: string) => void;
+
+export interface RangeTimeType {
+	month: string;
+	year: string;
+}
+
+export interface ExperienceProjectType {
+	name: string;
+	description: string;
+	url?: string;
+	type: 'research' | 'software' | 'module' | 'package';
+	source: 'open' | 'closed';
+	company: string;
+}
+
+export interface ExperienceType {
+	company: string;
+	position: string;
+	start: RangeTimeType;
+	end?: RangeTimeType;
+	company_info: string;
+	logo: string;
+	work_description: string;
+	works: ExperienceProjectType[];
+}

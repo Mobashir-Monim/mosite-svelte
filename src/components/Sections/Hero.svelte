@@ -42,7 +42,7 @@
 			svgBoxClasses="mx-auto fill-none"
 			containerShape="none"
 			solidShapeClasses="stroke-white fill-white stroke-2"
-			outlineShapeClasses="stroke-white/50"
+			outlineShapeClasses="stroke-white fill-violet-500"
 		/>
 		<div class="mx-auto">
 			<div

@@ -24,7 +24,7 @@
 		svgBoxClasses="mx-auto fill-none"
 		containerShape="none"
 		solidShapeClasses="stroke-white fill-white"
-		outlineShapeClasses="stroke-white/50"
+		outlineShapeClasses="stroke-white"
 	/>
 	<NameBlock {name} />
 	<div class="flex flex-col gap-2 mt-auto">

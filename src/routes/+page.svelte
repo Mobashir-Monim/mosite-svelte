@@ -1,7 +1,6 @@
 <script lang="ts">
 	import About from '../components/Sections/About/About.svelte';
 	import Hero from '../components/Sections/Hero.svelte';
-	import type { NavItemType, PersonNameType, SocialItemType } from '../types';
 	import { currentContentStore } from '../store';
 	import Experience from '../components/Sections/Experiences/Experiences.svelte';
 
@@ -21,25 +20,25 @@
 	<div class="fixed top-0 left-0 w-full h-screen -z-10 bg-black">
 		<div
 			style="background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);"
-			class="transition-all duration-300 opacity-50 ease-linear w-full {currentContent === 'hero'
+			class="transition-all duration-700 opacity-50 ease-linear w-full {currentContent === 'hero'
 				? 'h-[100vh]'
 				: 'h-[0vh]'}"
 		/>
 		<div
 			style="background: conic-gradient(#202639 90deg, #164e63 180deg, #0c4a6e 270deg, #202639 360deg)"
-			class="transition-all duration-300 ease-linear w-full {currentContent === 'about'
+			class="transition-all duration-700 ease-linear w-full {currentContent === 'about'
 				? 'h-[100vh]'
 				: 'h-[0vh]'}"
 		/>
 		<div
-			style="background: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);"
-			class="transition-all duration-300 ease-linear w-full {currentContent === 'experience'
+			style="background: conic-gradient(from -45deg at 70% 40%, rgb(32, 38, 57) 30deg, rgb(63, 76, 119) 220deg, rgb(63, 61, 81) 300deg, rgb(32, 38, 57) 360deg)"
+			class="transition-all duration-700 ease-linear w-full {currentContent === 'experience'
 				? 'h-[100vh]'
 				: 'h-[0vh]'}"
 		/>
 	</div>
 
-	<Hero />
-	<About />
+	<!-- <Hero />
+	<About /> -->
 	<Experience />
 </main>
