@@ -24,7 +24,7 @@ export interface SkillTagType {
 
 export interface NavItemType {
 	label: string;
-	icon: Omit<typeof SvelteComponent<IconType>, 'prototype'>;
+	icon: ConstructorOfATypedSvelteComponent;
 	props: Object;
 	contentKey: string;
 }
