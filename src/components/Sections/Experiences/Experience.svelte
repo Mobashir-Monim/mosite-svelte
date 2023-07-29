@@ -25,7 +25,7 @@
 	</div>
 	<div class="flex flex-col md:flex-row justify-between">
 		<div class="flex flex-col w-full md:w-[80%]">
-			<h1 class="text-[0.9rem] md:text-[1rem]">Lecturer & Software Dev</h1>
+			<h1 class="text-[0.9rem] md:text-[1rem]">{expereince.position}</h1>
 			<!-- <h3 class="text-[0.8rem]">CSE, Brac University</h3> -->
 		</div>
 	</div>

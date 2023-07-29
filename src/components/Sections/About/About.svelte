@@ -18,17 +18,23 @@
 
 <MediaQuery query="(max-width: 480px)" let:matches>
 	{#if matches}
-		<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
-			<AboutIntro />
-		</div>
+		<Section {contentKey}>
+			<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
+				<AboutIntro />
+			</div>
+		</Section>
 
-		<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
-			<AboutDescription />
-		</div>
+		<Section contentKey="about-description">
+			<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
+				<AboutDescription />
+			</div>
+		</Section>
 
-		<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
-			<SkillBlock />
-		</div>
+		<Section contentKey="skills">
+			<div class={mobileAboutSectionClasses} use:viewport on:enterViewport={setCurrentContentKey}>
+				<SkillBlock />
+			</div>
+		</Section>
 	{:else}
 		<Section {contentKey}>
 			<div class="text-[0.8rem] relative w-full h-full flex flex-col justify-center">

@@ -6,5 +6,6 @@ declare namespace svelteHTML {
 	// enhance attributes
 	interface HTMLAttributes<T> {
 		'on:enterViewport'?: (event: any) => any;
+		'on:click'?: (event: any) => any;
 	}
 }

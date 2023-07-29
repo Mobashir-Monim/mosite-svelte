@@ -7,6 +7,17 @@
 	currentContentStore.subscribe((value) => {
 		currentContent = value;
 	});
+
+	const scrollIntoView = (id: string) => {
+		const el = document.querySelector(id);
+		currentContentStore.set(id.replace('#', ''));
+
+		if (!el) return;
+        
+		el.scrollIntoView({
+			behavior: 'smooth'
+		});
+	};
 </script>
 
 <nav
@@ -14,7 +25,13 @@
 >
 	<div class="flex flex-row justify-center gap-10 w-full">
 		{#each items as item}
-			<svelte:component this={item.icon} {...item.props} />
+			<a
+				href="#{item.contentKey}"
+				on:click|preventDefault={() => scrollIntoView(`#${item.contentKey}`)}
+				class="my-auto"
+			>
+				<svelte:component this={item.icon} {...item.props} />
+			</a>
 		{/each}
 	</div>
 </nav>
