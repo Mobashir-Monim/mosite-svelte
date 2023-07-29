@@ -17,7 +17,7 @@
 </script>
 
 <div
-	class="flex flex-col gap-5 !justify-center w-full md:w-[35%] rounded-3xl p-8 shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)] min-h-[45vh] max-h-[450px]"
+	class="flex flex-col gap-5 glassy-box !justify-center w-full md:w-[35%] p-8 min-h-[45vh] max-h-[450px]"
 >
 	<Logo
 		size={130}

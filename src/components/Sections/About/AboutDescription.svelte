@@ -2,9 +2,7 @@
 	const focusClasses: string = 'font-semibold text-blue-400';
 </script>
 
-<div
-	class="flex flex-col gap-5 rounded-3xl p-8 shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)] w-full md:w-[65%]"
->
+<div class="flex flex-col gap-5 p-8 glassy-box w-full md:w-[65%]">
 	<h1 class="text-[1.2rem] border-b">About Me</h1>
 	<div class="max-h-[60vh] overflow-y-auto flex flex-col gap-3 no-scroll-bar my-auto">
 		<p class="text-justify">

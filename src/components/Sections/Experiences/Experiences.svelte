@@ -80,9 +80,9 @@
 		use:viewport
 		on:enterViewport={setCurrentContentKey}
 	>
-		<div class="w-full md:w-[40%] my-auto text-[0.8rem] text-justify">
-			I started my dev career at the end of 2016 during as a college student and instantly fell
-			in love with development. Since then, I have developed several software (solo and in a team).
+		<div class="w-full md:w-[40%] my-auto text-[0.8rem] text-justify p-5 glassy-box">
+			I started my dev career at the end of 2016 during as a college student and instantly fell in
+			love with development. Since then, I have developed several software (solo and in a team).
 		</div>
 		<div class="flex flex-col gap-12 w-full md:w-[60%] p-5 pl-0">
 			{#each expereinces as expereince}
