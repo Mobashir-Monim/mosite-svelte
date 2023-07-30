@@ -90,7 +90,7 @@
 	];
 </script>
 
-<div class="flex flex-col gap-5 p-8 glassy-box w-full">
+<div class="flex flex-col gap-5 p-5 glassy-box w-full">
 	<h1 class="text-[1.2rem] border-b">Skills</h1>
 	<div class="flex flex-row gap-3 flex-wrap justify-center">
 		{#each skills as skill}
