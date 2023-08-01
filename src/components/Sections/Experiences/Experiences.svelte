@@ -76,15 +76,30 @@
 
 <Section {contentKey}>
 	<div
-		class="flex flex-col md:flex-row gap-10 md:gap-16 justify-between"
+		class="flex flex-col-reverse md:flex-row gap-10 md:gap-16 justify-between mb-10"
 		use:viewport
 		on:enterViewport={setCurrentContentKey}
 	>
-		<div class="w-full md:w-[40%] my-auto text-[0.8rem] text-justify p-5 glassy-box">
-			I started my dev career at the end of 2016 during as a college student and instantly fell in
-			love with development. Since then, I have developed several software (solo and in a team).
+		<div
+			class="w-full md:w-[40%] md:mb-auto text-[0.8rem] text-justify flex flex-col gap-8 justify-between h-full"
+		>
+			<div class="glassy-box md:min-h-[30vh] flex flex-col p-5">
+				<h3 class="border-b-2 text-[1.2rem]">Experience</h3>
+				<p class="mt-5 md:my-auto">
+					I started my dev career at the end of 2016 during as a college student and instantly fell
+					in love with development. Since then, I have developed several software (solo and in a
+					team).
+				</p>
+			</div>
+
+			<a
+				href="mailto:mobashirmonim@gmail.com"
+				class="py-2 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transition-all duration-300 ease-linear shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
+			>
+				Want to talk?
+			</a>
 		</div>
-		<div class="flex flex-col gap-12 w-full md:w-[60%] p-5 pl-0">
+		<div class="flex flex-col gap-8 w-full md:w-[60%] pr-5 justify-around h-full">
 			{#each expereinces as expereince}
 				<Experience {expereince} />
 			{/each}

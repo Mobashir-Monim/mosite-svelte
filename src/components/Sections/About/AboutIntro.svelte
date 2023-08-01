@@ -17,7 +17,7 @@
 </script>
 
 <div
-	class="flex flex-col gap-5 glassy-box !justify-center w-full md:w-[35%] p-8 min-h-[45vh] max-h-[450px]"
+	class="flex flex-col gap-5 glassy-box !justify-center w-full md:w-[35%] p-5 min-h-[50vh] max-h-[450px]"
 >
 	<Logo
 		size={130}
@@ -31,5 +31,11 @@
 		<LocationBlock {location} />
 		<WorkBlock work="Fullstack Web Developer" />
 		<EducationBlock education="BSc. Computer Science Engineering" />
+		<a
+			href="mailto:mobashirmonim@gmail.com"
+			class="py-1.5 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transition-all duration-300 ease-linear shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
+		>
+			Want to talk?
+		</a>
 	</div>
 </div>

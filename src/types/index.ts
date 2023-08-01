@@ -29,7 +29,7 @@ export interface IconType {
 }
 
 export interface SocialItemType {
-	label: 'facebook' | 'twitter' | 'github' | 'linkedin';
+	label: 'facebook' | 'twitter' | 'github' | 'linkedin' | 'email';
 	link: string;
 }
 
@@ -43,10 +43,11 @@ export interface RangeTimeType {
 export interface ExperienceProjectType {
 	name: string;
 	description: string;
+	features: string[];
 	url?: string;
 	type: 'research' | 'software' | 'module' | 'package';
 	source: 'open' | 'closed';
-	company: string;
+	company?: string;
 }
 
 export interface ExperienceType {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import EmailIcon from '../../assets/icons/EmailIcon.svelte';
 	import Facebook from '../../assets/icons/socials/Facebook.svelte';
 	import Github from '../../assets/icons/socials/Github.svelte';
 	import LinkedIn from '../../assets/icons/socials/LinkedIn.svelte';
@@ -15,13 +16,15 @@
 		{#each socialItems as item}
 			<SocialsItem link={item.link}>
 				{#if item.label === 'facebook'}
-					<Facebook size="30" classes={socialIconsClasses} />
+					<Facebook size={30} classes={socialIconsClasses} />
 				{:else if item.label === 'twitter'}
-					<Twitter size="30" classes={socialIconsClasses} />
+					<Twitter size={30} classes={socialIconsClasses} />
 				{:else if item.label === 'github'}
-					<Github size="30" classes={socialIconsClasses} />
+					<Github size={30} classes={socialIconsClasses} />
 				{:else if item.label === 'linkedin'}
-					<LinkedIn size="30" classes={socialIconsClasses} />
+					<LinkedIn size={30} classes={socialIconsClasses} />
+				{:else if item.label === 'email'}
+					<EmailIcon size={30} classes={socialIconsClasses} circle={true} />
 				{/if}
 			</SocialsItem>
 		{/each}

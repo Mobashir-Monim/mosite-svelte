@@ -14,7 +14,7 @@
 
 body {
 	font-family: 'Montserrat';
-	@apply text-white no-scroll-bar;
+	@apply text-white no-scroll-bar tracking-wider font-light;
 }
 
 .mono-font {
@@ -51,5 +51,5 @@ body {
 }
 
 .glassy-box {
-	@apply shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)] bg-gradient-to-br from-white/20 rounded-3xl;
+	@apply shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)] bg-gradient-to-br from-slate-500 rounded-3xl;
 }

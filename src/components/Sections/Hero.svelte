@@ -25,6 +25,10 @@
 			link: 'https://github.com/mobashir-monim'
 		},
 		{
+			label: 'email',
+			link: 'mailto:mobashirmonim@gmail.com'
+		},
+		{
 			label: 'linkedin',
 			link: 'https://www.linkedin.com/in/mobashir-monim/'
 		}
