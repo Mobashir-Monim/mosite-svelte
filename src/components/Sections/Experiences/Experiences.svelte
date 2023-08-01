@@ -9,6 +9,8 @@
 	import type { ExperienceType } from '../../../types';
 	import Experience from './Experience.svelte';
 	import ExperienceDetail from './ExperienceDetail.svelte';
+	import Modal from '../../Modal/Modal.svelte';
+	import CloseIcon from '../../../assets/icons/CloseIcon.svelte';
 
 	const contentKey: string = 'experience';
 	let setCurrentContentKey: () => void = () => {
@@ -121,8 +123,8 @@
 				month: 'May',
 				year: '2023'
 			},
-			// company_info:
-			// 	"Brac University (BracU) established in 2001 is located in Dhaka Bangladesh. BracU follows a liberal arts approach to education which nurtures fresh ideas and gives new impetus to the field of tertiary education. It ensures a high quality of education and aims to meet the demands of contemporary times. Building on BRAC's experience of seeking solutions to challenges posed by extreme poverty, BracU hopes to instill in its students a commitment to working towards national development and progress.",
+			company_info:
+				"Brac University (BracU) established in 2001 is located in Dhaka Bangladesh. BracU follows a liberal arts approach to education which nurtures fresh ideas and gives new impetus to the field of tertiary education. It ensures a high quality of education and aims to meet the demands of contemporary times. Building on BRAC's experience of seeking solutions to challenges posed by extreme poverty, BracU hopes to instill in its students a commitment to working towards national development and progress.",
 			logo: bracu,
 			work_description:
 				'As a lecturer, my primary responsibility was to teach courses, and since my specialization is in software development, I was responsible for teaching and coordinating the Software Engineering course. At the same time, as a software developer, I had maintained some of the systems in place as well as developed new ones according to what was asked of by the department',
@@ -349,62 +351,16 @@
 	];
 
 	let selectedExperience: ExperienceType | null = null;
-
-	const showContent = (experience: ExperienceType): void => {
-		transitionModel.showPlaceholder = false;
-
-		setTimeout(() => {
-			transitionModel.placeholderRemoved = true;
-			transitionModel.detailsRemoved = false;
-
-			setTimeout(() => {
-				transitionModel.showDetails = true;
-				selectedExperience = experience;
-			}, 100);
-		}, 300);
-	};
-
-	const switchContent = (experience: ExperienceType): void => {
-		transitionModel.showDetails = false;
-
-		setTimeout(() => {
-			selectedExperience = experience;
-			setTimeout(() => {
-				transitionModel.showDetails = true;
-			}, 100);
-		}, 300);
-	};
-
-	const hideContent = (): void => {
-		transitionModel.showDetails = false;
-
-		setTimeout(() => {
-			selectedExperience = null;
-			transitionModel.detailsRemoved = true;
-			transitionModel.placeholderRemoved = false;
-
-			setTimeout(() => {
-				transitionModel.showPlaceholder = true;
-			}, 100);
-		}, 300);
-	};
-
 	const setSelectedExperience = (experience: ExperienceType | null): void => {
-		if (experience === null || selectedExperience?.company === experience?.company) {
-			hideContent();
-		} else if (selectedExperience === null) {
-			showContent(experience);
-		} else {
-			switchContent(experience);
-		}
+		selectedExperience = experience;
+
+		setTimeout(() => {
+			openModal();
+		}, 100);
 	};
 
-	const transitionModel = {
-		showPlaceholder: true,
-		showDetails: false,
-		placeholderRemoved: false,
-		detailsRemoved: true
-	};
+	let openModal: () => void;
+	let closeModal: () => void;
 </script>
 
 <Section {contentKey}>
@@ -413,36 +369,25 @@
 		use:viewport
 		on:enterViewport={setCurrentContentKey}
 	>
-		{#if !transitionModel.detailsRemoved}
-			<ExperienceDetail
-				experience={selectedExperience}
-				showContent={transitionModel.showDetails}
-				{setSelectedExperience}
-			/>
-		{/if}
-		{#if !transitionModel.placeholderRemoved}
-			<div
-				class="w-full flex flex-col gap-8 justify-between transit md:max-h-[545px] {transitionModel.showPlaceholder
-					? 'md:w-[45%]'
-					: 'md:w-[0%]'} md:mb-auto text-[0.8rem] h-full text-justify md:pb-6 md:px-6 md:overflow-x-hidden"
-			>
-				<div class="glassy-box md:min-h-[30vh] flex flex-col p-5">
-					<h3 class="border-b-2 text-[1.2rem]">Experience</h3>
-					<p class="mt-5 md:my-auto">
-						I started my dev career at the end of 2016 during as a college student and instantly
-						fell in love with development. Since then, I have developed several software (solo and
-						in a team).
-					</p>
-				</div>
-
-				<a
-					href="mailto:mobashirmonim@gmail.com"
-					class="py-2 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transit shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
-				>
-					Want to talk?
-				</a>
+		<div
+			class="w-full flex flex-col gap-8 justify-between transit md:max-h-[545px] md:w-[45%] md:mb-auto text-[0.8rem] h-full text-justify md:pb-6 md:px-6 md:overflow-x-hidden"
+		>
+			<div class="glassy-box md:min-h-[30vh] flex flex-col p-5 overflow-hidden">
+				<h3 class="border-b-2 text-[1.2rem]">Experience</h3>
+				<p class="mt-5 md:my-auto">
+					I started my dev career at the end of 2016 during as a college student and instantly fell
+					in love with development. Since then, I have developed several software (solo and in a
+					team).
+				</p>
 			</div>
-		{/if}
+
+			<a
+				href="mailto:mobashirmonim@gmail.com"
+				class="py-2 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transit shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
+			>
+				Want to talk?
+			</a>
+		</div>
 		<div
 			class="flex flex-col gap-8 md:gap-12 w-full md:w-[55%] pr-5 justify-around shrink-0 transit"
 		>
@@ -457,3 +402,17 @@
 		</div>
 	</div>
 </Section>
+<Modal bind:open={openModal} bind:close={closeModal}>
+	<Section contentKey="experience-{selectedExperience?.company}">
+		<div class="w-full h-auto glassy-box !rounded-tr-none relative p-5 md:p-10 bg-cyan-500/30">
+			<button
+				class="transit absolute top-[-15px] right-[-15px] rounded-xl w-[34px] h-[34px] bg-rose-500 hover:bg-rose-500/30 border-2 border-rose-500"
+				on:click={closeModal}
+			>
+				<CloseIcon size={30} classes="fill-white absolute top-0 left-0" />
+			</button>
+
+			<ExperienceDetail experience={selectedExperience} />
+		</div>
+	</Section>
+</Modal>

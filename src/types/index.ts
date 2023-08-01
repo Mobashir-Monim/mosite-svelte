@@ -60,3 +60,8 @@ export interface ExperienceType {
 	work_description: string;
 	works: ExperienceProjectType[];
 }
+
+export interface AccordionContentType {
+	title: string;
+	content: any;
+}
