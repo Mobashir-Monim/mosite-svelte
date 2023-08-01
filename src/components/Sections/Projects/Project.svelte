@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="glassy-box p-5 w-full flex flex-col !text-[0.7rem] gap-10 hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)] hover:bg-emerald-300/20 cursor-pointer transition-all duration-300 ease-linear"
+	class="glassy-box p-5 w-full flex flex-col !text-[0.7rem] gap-10 hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)] hover:bg-emerald-300/20 cursor-pointer transit"
 >
 	<div>
 		<h2 class="border-b line-clamp-1 text-[1rem]">{project.name}</h2>

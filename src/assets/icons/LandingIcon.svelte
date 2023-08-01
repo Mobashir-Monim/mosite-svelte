@@ -6,7 +6,7 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 -960 960 960"
-	class={`transition-all duration-300 ease-linear ${classes}`}
+	class={`transit ${classes}`}
 	height={`${size}`}
 	width={`${size}`}
 >

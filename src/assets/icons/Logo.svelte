@@ -16,7 +16,7 @@
 	width={size}
 	height={size / 2}
 	viewBox="0 0 520 520"
-	class="transition-all duration-300 ease-linear {svgBoxClasses}"
+	class="transit {svgBoxClasses}"
 >
 	<rect
 		x="388.003"
@@ -25,7 +25,7 @@
 		height="446.154"
 		rx="45.1432"
 		stroke-width="25"
-		class="transition-all duration-300 ease-linear {outlineShapeClasses} {outlineShapeRightClasses}"
+		class="transit {outlineShapeClasses} {outlineShapeRightClasses}"
 	/>
 	<rect
 		x="16.7064"
@@ -35,7 +35,7 @@
 		rx="45.4113"
 		transform="matrix(0.883305 -0.468799 0.45321 0.891403 9.55545 74.8822)"
 		stroke-width="25"
-		class="transition-all duration-300 ease-linear {outlineShapeClasses} {outlineShapeLeftClasses}"
+		class="transit {outlineShapeClasses} {outlineShapeLeftClasses}"
 	/>
 	<rect
 		x="29.6436"
@@ -43,7 +43,7 @@
 		width="115.286"
 		height="471.154"
 		rx="57.6432"
-		class="transition-all duration-300 ease-linear stroke-2 {solidShapeClasses} {solidShapeLeftClasses}"
+		class="transit stroke-2 {solidShapeClasses} {solidShapeLeftClasses}"
 	/>
 
 	<rect
@@ -51,7 +51,7 @@
 		height="499.991"
 		rx="57.9112"
 		transform="matrix(0.88334 0.468733 -0.453146 0.891436 407.689 10)"
-		class="transition-all duration-300 ease-linear stroke-2 {solidShapeClasses} {solidShapeRightClasses}"
+		class="transit stroke-2 {solidShapeClasses} {solidShapeRightClasses}"
 	/>
 
 	{#if containerShape !== 'none'}

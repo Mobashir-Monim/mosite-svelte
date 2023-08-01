@@ -53,3 +53,7 @@ body {
 .glassy-box {
 	@apply shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)] bg-gradient-to-br from-slate-500 rounded-3xl;
 }
+
+.transit {
+	@apply transition-all duration-300 ease-linear;
+}

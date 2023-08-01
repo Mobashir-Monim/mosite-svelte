@@ -263,7 +263,7 @@
 		on:enterViewport={setCurrentContentKey}
 	>
 		<div
-			class="flex flex-row flex-wrap my-auto gap-5 md:gap-10 w-full py-5 px-8 text-[0.9rem] justify-around md:w-[60%] max-h-[90vh] md:max-h-[80vh] overflow-y-auto no-scroll-bar rounded-3xl"
+			class="flex flex-row flex-wrap my-auto gap-5 md:gap-10 w-full py-5 px-8 text-[0.9rem] justify-around md:w-[60%] max-h-[calc(100%-50px)] md:max-h-[80vh] overflow-y-auto no-scroll-bar rounded-3xl"
 		>
 			{#each projects as project}
 				<Project {project} />

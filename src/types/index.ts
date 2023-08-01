@@ -55,7 +55,7 @@ export interface ExperienceType {
 	position: string;
 	start: RangeTimeType;
 	end?: RangeTimeType;
-	company_info: string;
+	company_info?: string;
 	logo: string;
 	work_description: string;
 	works: ExperienceProjectType[];

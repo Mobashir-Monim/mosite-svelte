@@ -6,11 +6,11 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 -960 960 960"
-	class={`transit ${classes}`}
+	class={`transit inline-block ${classes}`}
 	height={`${size}`}
 	width={`${size}`}
 >
 	<path
-		d="M479-120 189-279v-240L40-600l439-240 441 240v317h-60v-282l-91 46v240L479-120Zm0-308 315-172-315-169-313 169 313 172Zm0 240 230-127v-168L479-360 249-485v170l230 127Zm1-240Zm-1 74Zm0 0Z"
+		d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h279v60H180v600h600v-279h60v279q0 24-18 42t-42 18H180Zm202-219-42-43 398-398H519v-60h321v321h-60v-218L382-339Z"
 	/>
 </svg>

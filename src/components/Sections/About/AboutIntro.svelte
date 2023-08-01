@@ -33,7 +33,7 @@
 		<EducationBlock education="BSc. Computer Science Engineering" />
 		<a
 			href="mailto:mobashirmonim@gmail.com"
-			class="py-1.5 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transition-all duration-300 ease-linear shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
+			class="py-1.5 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transit shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
 		>
 			Want to talk?
 		</a>
