@@ -4,7 +4,7 @@
 
 <div class="flex flex-col gap-5 p-5 glassy-box w-full md:w-[65%]">
 	<h1 class="text-[1.2rem] border-b">About Me</h1>
-	<div class="max-h-[60vh] overflow-y-auto flex flex-col gap-3 no-scroll-bar my-auto">
+	<div class="md:max-h-[60vh] overflow-y-auto flex flex-col gap-3 no-scroll-bar my-auto">
 		<p class="text-justify">
 			I am a <span class={focusClasses}>full stack web developer</span> with a passion for learning and
 			creating. I am innately curious and have a love for research, exploring new ideas and approaches.

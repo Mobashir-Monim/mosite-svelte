@@ -365,7 +365,7 @@
 
 <Section {contentKey}>
 	<div
-		class="flex flex-col-reverse md:flex-row gap-10 justify-between mb-10 md:mb-0 transit"
+		class="flex flex-col md:flex-row gap-10 justify-between mb-10 md:mb-0 transit"
 		use:viewport
 		on:enterViewport={setCurrentContentKey}
 	>
@@ -383,13 +383,13 @@
 
 			<a
 				href="mailto:mobashirmonim@gmail.com"
-				class="py-2 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transit shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
+				class="hidden md:block py-2 rounded-full text-center bg-blue-500 hover:bg-emerald-300/50 transit shadow-[2px_2px_10px_2px_rgba(23,23,23,0.5)] hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)]"
 			>
 				Want to talk?
 			</a>
 		</div>
 		<div
-			class="flex flex-col gap-8 md:gap-12 w-full md:w-[55%] pr-5 justify-around shrink-0 transit"
+			class="flex flex-wrap md:flex-nowrap md:flex-col gap- md:gap-12 w-full md:w-[55%] md:pr-5 justify-between md:justify-around shrink-0 transit"
 		>
 			{#each experiences as experience, index}
 				<Experience
