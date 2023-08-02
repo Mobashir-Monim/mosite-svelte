@@ -48,6 +48,7 @@ export interface ExperienceProjectType {
 	type: 'research' | 'software' | 'module' | 'package';
 	source: 'open' | 'closed';
 	company?: string;
+	company_logo?: string;
 }
 
 export interface ExperienceType {

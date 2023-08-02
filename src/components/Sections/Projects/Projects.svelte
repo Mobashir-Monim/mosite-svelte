@@ -4,8 +4,12 @@
 	import { currentContentStore } from '../../../store';
 	import type { ExperienceProjectType } from '../../../types';
 	import Project from './Project.svelte';
-	import MediaQuery from '../../../MediaQuery.svelte';
-	// import Experience from './Experience.svelte';
+
+	import gymrev from '../../../assets/img/gym-revenue.png';
+	import bracu from '../../../assets/img/bracu.png';
+	import eveneer from '../../../assets/img/eveneer.png';
+	import techynaf from '../../../assets/img/techynaf-technologies-ltd.png';
+	import Logo from '../../../assets/icons/Logo.svelte';
 
 	const contentKey: string = 'projects';
 	let setCurrentContentKey: () => void = () => {
@@ -14,7 +18,7 @@
 
 	let projects: ExperienceProjectType[] = [
 		{
-			name: 'Billing Engine Module',
+			name: 'Billing Engine',
 			description:
 				'The billing engine module provides services for all client end billing related functions from members',
 			features: [
@@ -33,10 +37,11 @@
 			],
 			type: 'module',
 			source: 'closed',
-			company: 'Gym Revenue'
+			company: 'Gym Revenue',
+			company_logo: gymrev
 		},
 		{
-			name: 'Inventory Management Module',
+			name: 'Inventory Management',
 			description:
 				'The module enables maangement of inventories based on location, item category, item and brand',
 			features: [
@@ -47,10 +52,11 @@
 			],
 			type: 'module',
 			source: 'closed',
-			company: 'Gym Revenue'
+			company: 'Gym Revenue',
+			company_logo: gymrev
 		},
 		{
-			name: 'Point of Sales module',
+			name: 'Point of Sales',
 			description:
 				'The point of sales module enables the sale of inventory, subscription and services as well as discount',
 			features: [
@@ -62,10 +68,11 @@
 			],
 			type: 'module',
 			source: 'closed',
-			company: 'Gym Revenue'
+			company: 'Gym Revenue',
+			company_logo: gymrev
 		},
 		{
-			name: 'Service Agreements Module',
+			name: 'Service Agreements',
 			description:
 				'This module allows for management of terms of existing and new services/subscriptions, and their billing',
 			features: [
@@ -78,10 +85,11 @@
 			],
 			type: 'module',
 			source: 'closed',
-			company: 'Gym Revenue'
+			company: 'Gym Revenue',
+			company_logo: gymrev
 		},
 		{
-			name: 'Calendar and Scheduling Module',
+			name: 'Calendar and Scheduling',
 			description: '',
 			features: [
 				'Calendar and event management',
@@ -90,7 +98,8 @@
 			],
 			type: 'module',
 			source: 'closed',
-			company: 'Gym Revenue'
+			company: 'Gym Revenue',
+			company_logo: gymrev
 		},
 		{
 			name: 'Bout',
@@ -106,7 +115,8 @@
 			],
 			type: 'software',
 			source: 'open',
-			company: 'Eveneer'
+			company: 'Eveneer',
+			company_logo: eveneer
 		},
 		{
 			name: 'Boutv2',
@@ -126,7 +136,8 @@
 			],
 			type: 'software',
 			source: 'open',
-			company: 'Eveneer'
+			company: 'Eveneer',
+			company_logo: eveneer
 		},
 		{
 			name: 'Busso (SSO)',
@@ -143,7 +154,8 @@
 			],
 			type: 'software',
 			source: 'open',
-			company: 'Eveneer'
+			company: 'Eveneer',
+			company_logo: eveneer
 		},
 		{
 			name: 'Blober',
@@ -156,7 +168,8 @@
 			],
 			type: 'software',
 			source: 'open',
-			company: 'Eveneer'
+			company: 'Eveneer',
+			company_logo: eveneer
 		},
 		{
 			name: 'LightSaml',
@@ -171,7 +184,8 @@
 			],
 			type: 'package',
 			source: 'open',
-			company: 'Eveneer'
+			company: 'Eveneer',
+			company_logo: eveneer
 		},
 		{
 			name: 'Beep',
@@ -227,7 +241,8 @@
 			],
 			type: 'software',
 			source: 'closed',
-			company: 'Techynaf'
+			company: 'Techynaf',
+			company_logo: techynaf
 		},
 		{
 			name: 'Connect',
@@ -235,7 +250,8 @@
 			features: [],
 			type: 'software',
 			source: 'closed',
-			company: 'Techynaf'
+			company: 'Techynaf',
+			company_logo: techynaf
 		},
 		{
 			name: 'Huddle',
@@ -243,7 +259,8 @@
 			features: [],
 			type: 'software',
 			source: 'closed',
-			company: 'Techynaf'
+			company: 'Techynaf',
+			company_logo: techynaf
 		},
 		{
 			name: 'Alfred',
@@ -251,9 +268,23 @@
 			features: [],
 			type: 'software',
 			source: 'closed',
-			company: 'Techynaf'
+			company: 'Techynaf',
+			company_logo: techynaf
 		}
 	];
+
+	let pagiated: Array<ExperienceProjectType[]> = [];
+	let currentPage: number = 0;
+
+	const setCurrentPage = (page: number): void => {
+		currentPage = page;
+	};
+
+	for (let i = 0; i < projects.length; i++) {
+		if (i % 5 === 0) pagiated.push([]);
+
+		pagiated[pagiated.length - 1].push(projects[i]);
+	}
 </script>
 
 <Section {contentKey}>
@@ -263,16 +294,100 @@
 		on:enterViewport={setCurrentContentKey}
 	>
 		<div
-			class="flex flex-row flex-wrap my-auto gap-5 md:gap-10 w-full py-5 px-8 text-[0.9rem] justify-around md:w-[60%] max-h-[calc(100%-50px)] md:max-h-[80vh] overflow-y-auto no-scroll-bar rounded-3xl"
+			class="flex md:hidden flex-row flex-wrap my-auto gap-5 md:gap-10 w-full py-5 px-8 text-[0.9rem] justify-around max-h-[calc(100%-50px)] overflow-y-auto no-scroll-bar rounded-3xl"
 		>
 			{#each projects as project}
 				<Project {project} />
 			{/each}
 		</div>
-		<div
-			class="text-[0.8rem] text-justify hidden md:flex flex-col gap-8 justify-between h-full w-full md:w-[40%] my-auto max-h-[90vh] md:max-h-[80vh] py-5 px-8"
-		>
-			asa
+		<div class="w-full max-h-[calc(100%-50px)] hidden md:flex flex-col justify-center gap-5">
+			<table
+				class="table-auto w-full max-h-[80vh] border-separate border-spacing-y-2 text-[0.9rem]"
+			>
+				<thead>
+					<tr class="glassy-box">
+						<th class="text-left rounded-l-3xl">Name</th>
+						<th>Type</th>
+						<th class=" rounded-r-3xl justify-start overflow-hidden">
+							<div class="flex flex-row gap-5">
+								<span class="w-[40px]" />
+								<span>Company</span>
+							</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody class="">
+					{#each pagiated[currentPage] as project}
+						<tr class="glassy-box">
+							<td class="rounded-l-3xl w-[45%]">
+								<div class="flex flex-col mr-5">
+									<span class="border-b border-white/50">{project.name}</span>
+									<span class="text-[0.7rem] text-white/70">
+										{project.type[0].toUpperCase()}{project.type.slice(1)}
+									</span>
+								</div>
+							</td>
+							<td class="text-center w-[25%]">
+								<span
+									class="inline-block w-full rounded-full cursor-default px-3 py-1.5 bg-gradient-to-tr transition-all duration-200 ease-linear font-mono text-[0.8rem] {project.source ===
+									'open'
+										? 'from-teal-400/80 to-violet-500/80 hover:drop-shadow-[0px_0px_10px_rgba(5,150,105,1)]'
+										: 'from-amber-400/80 to-pink-500/80 hover:drop-shadow-[0px_0px_10px_rgba(239,68,68,1)]'}"
+								>
+									{project.source[0].toUpperCase()}{project.source.slice(1)} Source
+								</span>
+							</td>
+							<td class="rounded-r-3xl">
+								<div class="flex flex-row gap-5 justify-start">
+									{#if project.company}
+										<span class="w-[40px] h-[40px] rounded-full overflow-hidden">
+											<img src={project.company_logo} alt="{project.company} logo" />
+										</span>
+										<span class="my-auto">{project.company}</span>
+									{:else}
+										<span
+											class="w-[40px] h-[40px] flex flex-col justify-center rounded-full overflow-hidden bg-gradient-to-bl from-amber-400"
+										>
+											<Logo
+												size={40}
+												svgBoxClasses="mx-auto fill-none"
+												containerShape="none"
+												solidShapeClasses="stroke-white fill-white stroke-2"
+												outlineShapeClasses="stroke-white"
+											/>
+										</span>
+										<span class="my-auto">Hobby Project</span>
+									{/if}
+								</div>
+							</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+			<div class="flex flex-row justify-end">
+				<div class="flex flex-row gap-1">
+					{#each pagiated as group, index}
+						<button
+							on:click={() => setCurrentPage(index)}
+							class="p-2 transit {currentPage === index
+								? 'bg-emerald-400/30'
+								: 'bg-emerald-400'} rounded-full font-mono text-[0.8rem] border-2 hover:bg-emerald-400/30 border-emerald-400"
+						>
+							{index + 1}
+						</button>
+					{/each}
+				</div>
+			</div>
 		</div>
 	</div>
 </Section>
+
+<style lang="postcss" scoped>
+	th {
+		@apply font-normal;
+	}
+	td,
+	th {
+		@apply py-2 px-5;
+	}
+</style>

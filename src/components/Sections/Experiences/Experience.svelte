@@ -30,7 +30,7 @@
 				? 'gap-0'
 				: 'gap-5'} pb-1 transit"
 		>
-			<div class="my-auto {isSelected ? 'w-[0%]' : 'w-[5%]'} overflow-hidden transit">
+			<div class="my-auto {isSelected ? 'w-[0%]' : 'w-[10%] md:w-[5%]'} overflow-hidden transit">
 				<LinkIcon
 					size={20}
 					classes=" group-hover:fill-emerald-300 {isSelected

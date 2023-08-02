@@ -15,8 +15,10 @@
 
 {#if experience}
 	<div class="w-full flex flex-col gap-8 justify-between transit text-[0.8rem] text-justify">
-		<div class="flex flex-col md:flex-row gap-10">
-			<div class="w-[150px] h-[150px] rounded-2xl overflow-hidden shrink-0 mx-auto md:mx-0">
+		<div class="flex flex-col md:flex-row gap-5 md:gap-10">
+			<div
+				class="w-[100px] h-[100px] md:w-[150px] md:h-[150px] rounded-2xl overflow-hidden shrink-0 mx-auto md:mx-0"
+			>
 				<img src={experience.logo} alt="{experience.company} Logo" />
 			</div>
 			<div class="flex flex-col gap-3 w-full my-auto">

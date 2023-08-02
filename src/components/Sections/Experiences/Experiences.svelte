@@ -365,14 +365,14 @@
 
 <Section {contentKey}>
 	<div
-		class="flex flex-col-reverse md:flex-row gap-10 md:gap-5 justify-between mb-10 md:mb-0 transit"
+		class="flex flex-col-reverse md:flex-row gap-10 justify-between mb-10 md:mb-0 transit"
 		use:viewport
 		on:enterViewport={setCurrentContentKey}
 	>
 		<div
-			class="w-full flex flex-col gap-8 justify-between transit md:max-h-[545px] md:w-[45%] md:mb-auto text-[0.8rem] h-full text-justify md:pb-6 md:px-6 md:overflow-x-hidden"
+			class="w-full flex flex-col gap-8 justify-between transit md:max-h-[545px] md:w-[45%] md:mb-auto text-[0.8rem] h-full text-justify"
 		>
-			<div class="glassy-box md:min-h-[30vh] flex flex-col p-5 overflow-hidden">
+			<div class="glassy-box md:min-h-[30vh] flex flex-col p-5">
 				<h3 class="border-b-2 text-[1.2rem]">Experience</h3>
 				<p class="mt-5 md:my-auto">
 					I started my dev career at the end of 2016 during as a college student and instantly fell
