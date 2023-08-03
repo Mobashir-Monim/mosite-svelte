@@ -12,8 +12,7 @@
 		currentContentStore.set(contentKey);
 	};
 
-	const mobileSectionContainers: string =
-		'w-[100vw] mx-5 my-2.5 h-full flex flex-col justify-center';
+	const mobileSectionContainers: string = 'w-[100vw] mx-5 h-full flex flex-col justify-center';
 	const mobileContentDisplay = {
 		active: 'intro',
 		left: 'left-0'
@@ -30,16 +29,13 @@
 
 		mobileContentDisplay.active = content;
 	};
-
-	const mobileAboutSectionClasses =
-		'h-[calc(100vh-20px)] snap-start shrink-0 text-[0.8rem] flex flex-col justify-center mx-5 my-2.5';
 </script>
 
 <MediaQuery query="(max-width: 480px)" let:matches>
 	{#if matches}
 		<Section {contentKey} divClasses="!px-0 transit overflow-hidden">
 			<div
-				class="text-[0.8rem] absolute top-0 {mobileContentDisplay.left} w-[300vw] h-[calc(100vh-20px)] snap-start flex flex-row justify-around transit"
+				class="text-[0.8rem] absolute top-0 {mobileContentDisplay.left} w-[300vw] h-[calc(100vh-50px)] snap-start flex flex-row justify-around transit"
 			>
 				<div class={mobileSectionContainers}>
 					<AboutIntro />

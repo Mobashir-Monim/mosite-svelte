@@ -90,9 +90,9 @@
 	];
 </script>
 
-<div class="flex flex-col gap-5 p-5 glassy-box w-full">
+<div class="flex flex-col gap-5 p-5 glassy-box w-full min-h-[70vh] md:min-h-fit">
 	<h1 class="text-[1.2rem] border-b">Skills</h1>
-	<div class="flex flex-row gap-3 flex-wrap justify-center">
+	<div class="flex flex-row gap-3 flex-wrap justify-center my-auto">
 		{#each skills as skill}
 			<SkillTag {skill} />
 		{/each}

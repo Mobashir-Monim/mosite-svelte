@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { SocialItemType } from '../../types';
 	import viewport from '../../actions/useViewportAction';
 	import Logo from '../../assets/icons/Logo.svelte';
 	import SocialsBlock from '../SocialsBlock/SocialsBlock.svelte';
@@ -10,29 +9,6 @@
 	let setCurrentContentKey: () => void = () => {
 		currentContentStore.set(contentKey);
 	};
-
-	let socialItems: SocialItemType[] = [
-		{
-			label: 'facebook',
-			link: 'https://www.facebook.com/mobashir.monim'
-		},
-		{
-			label: 'twitter',
-			link: 'https://twitter.com/M_Monim'
-		},
-		{
-			label: 'github',
-			link: 'https://github.com/mobashir-monim'
-		},
-		{
-			label: 'email',
-			link: 'mailto:mobashirmonim@gmail.com'
-		},
-		{
-			label: 'linkedin',
-			link: 'https://www.linkedin.com/in/mobashir-monim/'
-		}
-	];
 </script>
 
 <Section {contentKey}>
@@ -59,7 +35,7 @@
 			</div>
 		</div>
 		<div class="mt-10">
-			<SocialsBlock {socialItems} />
+			<SocialsBlock />
 		</div>
 	</div>
 </Section>

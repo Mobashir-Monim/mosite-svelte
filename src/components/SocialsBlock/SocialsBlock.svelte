@@ -7,7 +7,28 @@
 	import type { SocialItemType } from '../../types';
 	import SocialsItem from './SocialsItem.svelte';
 
-	export let socialItems: SocialItemType[];
+    let socialItems: SocialItemType[] = [
+		{
+			label: 'facebook',
+			link: 'https://www.facebook.com/mobashir.monim'
+		},
+		{
+			label: 'twitter',
+			link: 'https://twitter.com/M_Monim'
+		},
+		{
+			label: 'github',
+			link: 'https://github.com/mobashir-monim'
+		},
+		{
+			label: 'email',
+			link: 'mailto:mobashirmonim@gmail.com'
+		},
+		{
+			label: 'linkedin',
+			link: 'https://www.linkedin.com/in/mobashir-monim/'
+		}
+	];
 	let socialIconsClasses: string = 'fill-white/50 hover:fill-white';
 </script>
 

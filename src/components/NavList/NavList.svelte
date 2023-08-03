@@ -82,7 +82,7 @@
 </script>
 
 <nav
-	class="absolute top-0 md:top-[calc(100%-50px)] left-0 md:left-[calc(50%-250px)] w-full md:w-[500px] md:rounded-full bg-slate-500/60 md:bg-gradient-to-b md:from-slate-500 h-[50px] py-2 px-10 z-30"
+	class="absolute top-[calc(100%-50px)] left-0 md:left-[calc(50%-250px)] w-full md:w-[500px] md:rounded-full bg-slate-500/60 md:bg-gradient-to-b md:from-slate-500 h-[50px] py-2 px-10 z-30"
 >
 	<div class="flex flex-row justify-around md:justify-center gap-6 md:gap-10 w-full my-auto">
 		{#each items as item}

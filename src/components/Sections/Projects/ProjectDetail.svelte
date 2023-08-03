@@ -1,5 +1,6 @@
 <script lang="ts">
 	import ChevronIcon from '../../../assets/icons/ChevronIcon.svelte';
+	import LinkIcon from '../../../assets/icons/LinkIcon.svelte';
 	import Logo from '../../../assets/icons/Logo.svelte';
 	import type { ExperienceProjectType } from '../../../types';
 
@@ -48,17 +49,24 @@
 						</span>
 					{/if}
 					<span class="my-auto line-clamp-1 text-left">
-						{project.company ? project.company : 'Hobby Project'}
+						{project.company ? project.company : 'Hobby'}
 					</span>
 				</div>
 
-				<span
-					class="my-auto {tagClasses} {project.source === 'closed'
+				<a
+					href={project.url}
+					target="_blank"
+					class="my-auto flex flex-row gap-2 {tagClasses} {project.source === 'closed'
 						? closedSourceClasses
 						: openSourceClasses}"
 				>
-					{project.source[0].toLocaleUpperCase()}{project.source.slice(1)}
-				</span>
+					{#if project.url}
+						<LinkIcon size={20} classes="fill-white my-auto" />
+					{/if}
+					<span class="my-auto line-clamp-1">
+						{project.source[0].toLocaleUpperCase()}{project.source.slice(1)} Source
+					</span>
+				</a>
 			</div>
 		</div>
 

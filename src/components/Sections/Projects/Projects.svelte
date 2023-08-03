@@ -194,7 +194,6 @@
 			name: 'Beep',
 			description:
 				'Beep is a parking lot management and parking spot subscription system which connects with IoT devices to detect free spots',
-			url: 'https://github.com/Mobashir-Monim/beep',
 			features: [
 				'IoT based empty spot detection',
 				'Self subscription and booking',
@@ -303,52 +302,23 @@
 
 <Section {contentKey}>
 	<div
-		class="flex flex-col md:flex-row gap-5 h-full justify-center"
+		class="flex flex-row gap-5 h-full justify-center my-10"
 		use:viewport
 		on:enterViewport={setCurrentContentKey}
 	>
-		<div
-			class="flex md:hidden flex-row flex-wrap my-auto gap-5 w-full  px-6 text-[0.9rem] justify-around max-h-[calc(100%-50px)] overflow-y-auto no-scroll-bar rounded-3xl"
-		>
-			{#each projects as project, index}
-				<Project
-					{project}
-					{selectProject}
-					{index}
-					displayType="card"
-					isSelected={selectedProject?.name === project.name}
-				/>
-			{/each}
-		</div>
-		<div class="w-full max-h-[calc(100%-50px)] hidden md:flex flex-col justify-center gap-5">
-			<table
-				class="table-auto w-full max-h-[80vh] border-separate border-spacing-y-5 text-[0.9rem]"
-			>
-				<thead>
-					<tr class="glassy-box">
-						<th class="text-left rounded-l-3xl">Name</th>
-						<th>Type</th>
-						<th class=" rounded-r-3xl justify-start overflow-hidden">
-							<div class="flex flex-row gap-5">
-								<span class="w-[40px]" />
-								<span>Company</span>
-							</div>
-						</th>
-					</tr>
-				</thead>
-				<tbody class="">
-					{#each pagiated[currentPage] as project, index}
-						<Project
-							{project}
-							{selectProject}
-							{index}
-							displayType="row"
-							isSelected={selectedProject?.name === project.name}
-						/>
-					{/each}
-				</tbody>
-			</table>
-			<div class="flex flex-row justify-end">
+		<div class="flex flex-col gap-6 w-full text-[0.9rem] max-h-[calc(100%-50px)] justify-between">
+			<div class="flex flex-col gap-6">
+				{#each pagiated[currentPage] as project, index}
+					<Project
+						{project}
+						{selectProject}
+						{index}
+						isSelected={selectedProject?.name === project.name}
+					/>
+				{/each}
+			</div>
+
+			<div class="flex flex-row justify-center md:justify-end w-full h-auto">
 				<div class="flex flex-row gap-1">
 					{#each pagiated as group, index}
 						<button
@@ -379,9 +349,3 @@
 		</div>
 	</Section>
 </Modal>
-
-<style lang="postcss" scoped>
-	th {
-		@apply font-normal py-2 px-5;
-	}
-</style>
