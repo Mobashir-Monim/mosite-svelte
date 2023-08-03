@@ -10,6 +10,9 @@
 	import eveneer from '../../../assets/img/eveneer.png';
 	import techynaf from '../../../assets/img/techynaf-technologies-ltd.png';
 	import Logo from '../../../assets/icons/Logo.svelte';
+	import Modal from '../../Modal/Modal.svelte';
+	import CloseIcon from '../../../assets/icons/CloseIcon.svelte';
+	import ProjectDetail from './ProjectDetail.svelte';
 
 	const contentKey: string = 'projects';
 	let setCurrentContentKey: () => void = () => {
@@ -275,6 +278,14 @@
 
 	let pagiated: Array<ExperienceProjectType[]> = [];
 	let currentPage: number = 0;
+	let selectedProject: ExperienceProjectType | null = null;
+	const selectProject = (project: ExperienceProjectType | null): void => {
+		selectedProject = project;
+
+		setTimeout(() => {
+			openModal();
+		}, 100);
+	};
 
 	const setCurrentPage = (page: number): void => {
 		currentPage = page;
@@ -285,6 +296,9 @@
 
 		pagiated[pagiated.length - 1].push(projects[i]);
 	}
+
+	let openModal: () => void;
+	let closeModal: () => void;
 </script>
 
 <Section {contentKey}>
@@ -294,15 +308,21 @@
 		on:enterViewport={setCurrentContentKey}
 	>
 		<div
-			class="flex md:hidden flex-row flex-wrap my-auto gap-5 md:gap-10 w-full py-5 px-8 text-[0.9rem] justify-around max-h-[calc(100%-50px)] overflow-y-auto no-scroll-bar rounded-3xl"
+			class="flex md:hidden flex-row flex-wrap my-auto gap-5 w-full  px-6 text-[0.9rem] justify-around max-h-[calc(100%-50px)] overflow-y-auto no-scroll-bar rounded-3xl"
 		>
-			{#each projects as project}
-				<Project {project} />
+			{#each projects as project, index}
+				<Project
+					{project}
+					{selectProject}
+					{index}
+					displayType="card"
+					isSelected={selectedProject?.name === project.name}
+				/>
 			{/each}
 		</div>
 		<div class="w-full max-h-[calc(100%-50px)] hidden md:flex flex-col justify-center gap-5">
 			<table
-				class="table-auto w-full max-h-[80vh] border-separate border-spacing-y-2 text-[0.9rem]"
+				class="table-auto w-full max-h-[80vh] border-separate border-spacing-y-5 text-[0.9rem]"
 			>
 				<thead>
 					<tr class="glassy-box">
@@ -317,50 +337,14 @@
 					</tr>
 				</thead>
 				<tbody class="">
-					{#each pagiated[currentPage] as project}
-						<tr class="glassy-box">
-							<td class="rounded-l-3xl w-[45%]">
-								<div class="flex flex-col mr-5">
-									<span class="border-b border-white/50">{project.name}</span>
-									<span class="text-[0.7rem] text-white/70">
-										{project.type[0].toUpperCase()}{project.type.slice(1)}
-									</span>
-								</div>
-							</td>
-							<td class="text-center w-[25%]">
-								<span
-									class="inline-block w-full rounded-full cursor-default px-3 py-1.5 bg-gradient-to-tr transition-all duration-200 ease-linear font-mono text-[0.8rem] {project.source ===
-									'open'
-										? 'from-teal-400/80 to-violet-500/80 hover:drop-shadow-[0px_0px_10px_rgba(5,150,105,1)]'
-										: 'from-amber-400/80 to-pink-500/80 hover:drop-shadow-[0px_0px_10px_rgba(239,68,68,1)]'}"
-								>
-									{project.source[0].toUpperCase()}{project.source.slice(1)} Source
-								</span>
-							</td>
-							<td class="rounded-r-3xl">
-								<div class="flex flex-row gap-5 justify-start">
-									{#if project.company}
-										<span class="w-[40px] h-[40px] rounded-full overflow-hidden">
-											<img src={project.company_logo} alt="{project.company} logo" />
-										</span>
-										<span class="my-auto">{project.company}</span>
-									{:else}
-										<span
-											class="w-[40px] h-[40px] flex flex-col justify-center rounded-full overflow-hidden bg-gradient-to-bl from-amber-400"
-										>
-											<Logo
-												size={40}
-												svgBoxClasses="mx-auto fill-none"
-												containerShape="none"
-												solidShapeClasses="stroke-white fill-white stroke-2"
-												outlineShapeClasses="stroke-white"
-											/>
-										</span>
-										<span class="my-auto">Hobby Project</span>
-									{/if}
-								</div>
-							</td>
-						</tr>
+					{#each pagiated[currentPage] as project, index}
+						<Project
+							{project}
+							{selectProject}
+							{index}
+							displayType="row"
+							isSelected={selectedProject?.name === project.name}
+						/>
 					{/each}
 				</tbody>
 			</table>
@@ -381,13 +365,23 @@
 		</div>
 	</div>
 </Section>
+<Modal bind:open={openModal} bind:close={closeModal}>
+	<Section contentKey="experience-{selectedProject?.name}">
+		<div class="w-full h-auto glassy-box !rounded-tr-none relative p-5 md:p-10 bg-indigo-500/30">
+			<button
+				class="transit absolute top-[-15px] right-[-15px] rounded-xl w-[34px] h-[34px] bg-rose-500 hover:bg-rose-500/30 border-2 border-rose-500"
+				on:click={closeModal}
+			>
+				<CloseIcon size={30} classes="fill-white absolute top-0 left-0" />
+			</button>
+
+			<ProjectDetail project={selectedProject} />
+		</div>
+	</Section>
+</Modal>
 
 <style lang="postcss" scoped>
 	th {
-		@apply font-normal;
-	}
-	td,
-	th {
-		@apply py-2 px-5;
+		@apply font-normal py-2 px-5;
 	}
 </style>

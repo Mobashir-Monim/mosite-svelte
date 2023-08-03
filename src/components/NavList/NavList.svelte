@@ -49,7 +49,7 @@
 			icon: Logo,
 			contentKey: 'hero',
 			props: {
-				size: 50,
+				size: 68,
 				containerShape: 'none',
 				svgBoxClasses: 'my-auto group cursor-pointer',
 				outlineShapeClasses:
@@ -82,9 +82,9 @@
 </script>
 
 <nav
-	class=" absolute bottom-0 left-0 md:left-[calc(50%-250px)] w-full md:w-[500px] rounded-t-full bg-gradient-to-b from-slate-500 h-[50px] py-2 px-10"
+	class="absolute top-0 md:top-[calc(100%-50px)] left-0 md:left-[calc(50%-250px)] w-full md:w-[500px] md:rounded-full bg-slate-500/60 md:bg-gradient-to-b md:from-slate-500 h-[50px] py-2 px-10 z-30"
 >
-	<div class="flex flex-row justify-center gap-6 md:gap-10 w-full">
+	<div class="flex flex-row justify-around md:justify-center gap-6 md:gap-10 w-full my-auto">
 		{#each items as item}
 			<a
 				href="#{item.contentKey}"

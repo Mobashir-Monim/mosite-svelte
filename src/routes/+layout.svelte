@@ -9,8 +9,10 @@
 	});
 </script>
 
+<div class="relative md:hidden">
+	<NavList />
+</div>
 <slot />
-
 <div class="relative">
 	<NavList />
 </div>

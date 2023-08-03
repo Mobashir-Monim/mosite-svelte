@@ -404,7 +404,7 @@
 </Section>
 <Modal bind:open={openModal} bind:close={closeModal}>
 	<Section contentKey="experience-{selectedExperience?.company}">
-		<div class="w-full h-auto glassy-box !rounded-tr-none relative p-5 md:p-10 bg-cyan-500/30">
+		<div class="w-full h-auto glassy-box !rounded-tr-none relative p-5 md:p-10 bg-sky-500/30">
 			<button
 				class="transit absolute top-[-15px] right-[-15px] rounded-xl w-[34px] h-[34px] bg-rose-500 hover:bg-rose-500/30 border-2 border-rose-500"
 				on:click={closeModal}
