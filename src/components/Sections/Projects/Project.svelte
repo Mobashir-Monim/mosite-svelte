@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LinkIcon from '../../../assets/icons/LinkIcon.svelte';
 	import Logo from '../../../assets/icons/Logo.svelte';
 	import type { ExperienceProjectType } from '../../../types';
 
@@ -24,7 +25,10 @@
 		: 'shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)]'}"
 >
 	<div>
-		<h2 class="border-b line-clamp-1 text-[1rem]">{project.name}</h2>
+		<h2 class="border-b line-clamp-1 text-[1rem] flex flex-row gap-3">
+			<LinkIcon size={15} classes="fill-white my-auto" />
+			<span class="my-auto">{project.name}</span>
+		</h2>
 		<h3 class="line-clapm-1">{project.type[0].toLocaleUpperCase()}{project.type.slice(1)}</h3>
 	</div>
 	<div class="flex flex-row justify-between">

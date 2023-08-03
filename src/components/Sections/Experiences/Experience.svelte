@@ -15,7 +15,7 @@
 	role="button"
 	tabindex={index}
 	class="mt-7 md:mt-0 flex flex-col justify-center h-[80px] md:h-[100px] w-[45%] md:w-full hover:shadow-[0px_0px_0px_2px_rgba(52,211,153,1)] relative mr-2.5 p-2 md:px-5 md:py-5 transit cursor-pointer hover:bg-emerald-300/20 group glassy-box {isSelected
-		? '!shadow-[0px_0px_0px_2px_rgba(244,63,94,1)] !bg-rose-500/30'
+		? '!shadow-[0px_0px_0px_2px_rgba(244,63,94,1)] !from-slate-500 !bg-rose-500/30'
 		: 'shadow-[5px_5px_20px_5px_rgba(23,23,23,0.5)]'}"
 >
 	<div
@@ -27,17 +27,10 @@
 	</div>
 	<div class="md:h-[50px] flex flex-col justify-center">
 		<div
-			class="text-[0.8rem] md:mr-[45px] md:border-b flex flex-row {isSelected
-				? 'gap-0'
-				: 'gap-2 md:gap-5'} md:pb-1 transit"
+			class="text-[0.8rem] md:mr-[45px] md:border-b flex flex-row gap-2 md:gap-5 md:pb-1 transit"
 		>
-			<div class="my-auto {isSelected ? 'w-[0%]' : 'w-[15%] md:w-[5%]'} overflow-hidden transit">
-				<LinkIcon
-					size={20}
-					classes=" group-hover:fill-emerald-300 {isSelected
-						? '!fill-transparent'
-						: 'fill-amber-500'}"
-				/>
+			<div class="my-auto w-[15%] md:w-[5%] overflow-hidden transit">
+				<LinkIcon size={20} />
 			</div>
 			<div class="flex flex-col md:flex-row md:gap-2 my-auto">
 				<span class="hidden md:inline-block">
