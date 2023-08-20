@@ -32,27 +32,28 @@
 		<h3 class="line-clapm-1">{project.type[0].toLocaleUpperCase()}{project.type.slice(1)}</h3>
 	</div>
 	<div class="flex flex-row justify-between">
-		<!-- <span class="{tagClasses} {typeClasses}"
-				>{project.type[0].toLocaleUpperCase()}{project.type.slice(1)}</span
-			> -->
-
-		{#if project.company}
-			<span class="my-auto w-[30px] h-[30px] rounded-full overflow-hidden">
-				<img src={project.company_logo} alt="{project.company} logo" />
+		<div class="flex flex-row gap-3">
+			{#if project.company}
+				<span class="my-auto w-[30px] h-[30px] rounded-full overflow-hidden">
+					<img src={project.company_logo} alt="{project.company} logo" />
+				</span>
+			{:else}
+				<span
+					class="w-[30px] h-[30px] flex flex-col justify-center rounded-full overflow-hidden bg-gradient-to-bl from-amber-400"
+				>
+					<Logo
+						size={30}
+						svgBoxClasses="mx-auto fill-none"
+						containerShape="none"
+						solidShapeClasses="stroke-white fill-white stroke-2"
+						outlineShapeClasses="stroke-white"
+					/>
+				</span>
+			{/if}
+			<span class="hidden md:inline-block my-auto">
+				{project.company ?? 'Hobby Project'}
 			</span>
-		{:else}
-			<span
-				class="w-[30px] h-[30px] flex flex-col justify-center rounded-full overflow-hidden bg-gradient-to-bl from-amber-400"
-			>
-				<Logo
-					size={30}
-					svgBoxClasses="mx-auto fill-none"
-					containerShape="none"
-					solidShapeClasses="stroke-white fill-white stroke-2"
-					outlineShapeClasses="stroke-white"
-				/>
-			</span>
-		{/if}
+		</div>
 		<span
 			class="my-auto {tagClasses} {project.source === 'closed'
 				? closedSourceClasses

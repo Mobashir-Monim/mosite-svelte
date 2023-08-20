@@ -56,7 +56,9 @@
 				<a
 					href={project.url}
 					target="_blank"
-					class="my-auto flex flex-row gap-2 {tagClasses} {project.source === 'closed'
+					class="my-auto flex flex-row gap-2 {project.url
+						? 'cursor-pointer'
+						: 'cursor-not-allowed'} {tagClasses} {project.source === 'closed'
 						? closedSourceClasses
 						: openSourceClasses}"
 				>
