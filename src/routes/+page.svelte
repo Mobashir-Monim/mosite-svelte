@@ -4,6 +4,7 @@
 	import Hero from '../components/Sections/Hero.svelte';
 	import Experience from '../components/Sections/Experiences/Experiences.svelte';
 	import Projects from '../components/Sections/Projects/Projects.svelte';
+	import Education from '../components/Sections/Education/Education.svelte';
 
 	let screenWidth: number, screenHeight: number;
 
@@ -47,10 +48,17 @@
 				? 'h-[100vh]'
 				: 'h-[0vh]'}"
 		/>
+		<div
+			style="background: linear-gradient(50deg, rgba(40, 40, 40, 1), rgb(37, 84, 112));"
+			class="transition-all duration-700 ease-linear w-full {currentContent === 'education'
+				? 'h-[100vh]'
+				: 'h-[0vh]'}"
+		/>
 	</div>
 
 	<Hero />
 	<About />
 	<Experience />
 	<Projects />
+	<Education />
 </main>
